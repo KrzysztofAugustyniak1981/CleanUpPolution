@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./Style/style.css" type="text/css" />
 </head>
+
 <body>
     <div class="Main-info">
         <div class="Counter" id="Food">Food : </div>
@@ -24,7 +26,7 @@
                 <a href="#"><img id="hFarm" class="w-75" src="./Photo/Farma.jpg" class="img-fluid"> </a>
             </div>
             <div class="FC-two">
-                
+
             </div>
             <div class="FC-three align-items-center">
                 <a href="#"><img id="hHome" class="w-75 img-fluid" src="./Photo/Home.jpg"></a>
@@ -46,33 +48,125 @@
                 <a href="#"><img id="hMountains" class="w-75 img-fluid rounded" src="./Photo/Mountains.jpg"></a>
             </div>
             <div class="TC-two">
-                
+
             </div>
             <div class="TC-three">
                 <a href="#"><img id="hCity" class="w-75 img-fluid rounded" src="./Photo/City.jpg"></a>
             </div>
         </div>
-        
-        <div id="Farm" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 d-none">
+
+        <div id="Farm" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 d-none WindowOpenHtml">
             <img class="img-fluid" src="./Photo/FarmaBig.jpg">
-            <div class="position-absolute top-absolute border border-dark border-5 top-0 start-0 row">
-                <p class="Off text-end">X</p>
-            <button>+</button>
-            <p>Farm Workers</p>
-            <button>-</button>
+            <div class="ViewWindow ">
+                <a href="#" class="Off text-end">X</a>
+                <div class="row text-center buttonChange border border-dark">
+                    <button class="col-2">+</button>
+                    <div class="col-8">
+                        <p class="">Farm Workers</p>
+                        <p id="FarmWorkersCounter">0</p>
+                    </div>
+                    <button class="col-2">-</button>
+                </div>
             </div>
-
-
         </div>
 
+        <div id="Pollution" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
+            <img class="img-fluid" src="./Photo/PolutionBig.jpg">
+            <div class="ViewWindow bg-dark text-warning">
+                <a href="#" class="Off text-end text-white">X</a>
+                <div class="row text-center buttonChange border border-dark">
+                    <button class="col-2 text-white">+</button>
+                    <div class="col-8">
+                        <p class="">Cleaners</p>
+                        <p id="FarmWorkersCounter">0</p>
+                    </div>
+                    <button class="col-2 text-white">-</button>
+                </div>
+            </div>
+        </div>
 
+        <div id="Mountains" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
+            <img class="img-fluid" src="./Photo/MountainsBig.jpg">
+            <div class="ViewWindow">
+                <a href="#" class="Off text-end">X</a>
+                <div class="row text-center buttonChange border border-dark">
+                    <button class="col-2 text-white">+</button>
+                    <div class="col-8">
+                        <p class="mt-2">Miners</p>
+                        <p id="FarmWorkersCounter">0</p>
+                    </div>
+                    <button class="col-2 text-white">-</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="Garage" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
+            <img class="img-fluid" src="./Photo/GarageBig.jpg">
+            <div class="ViewWindow">
+                <a href="#" class="Off text-end">X</a>
+                <div class="row text-center buttonChange border border-dark bg-white">
+                    <button class="col-2">+</button>
+                    <div class="col-8">
+                        <p class="mt-2">Students</p>
+                        <p id="FarmWorkersCounter">0</p>
+                    </div>
+                    <button class="col-2">-</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="Vilige" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
+            <img class="img-fluid" src="./Photo/HomeBig.jpg">
+            <div class="ViewWindow">
+                <a href="#" class="Off text-end">X</a>
+                <div class="row text-center buttonChange border border-dark bg-white">
+                    <button class="col-2">+</button>
+                    <div class="col-8">
+                        <p class="mt-2">Students</p>
+                        <p id="FarmWorkersCounter">0</p>
+                    </div>
+                    <button class="col-2">-</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="Forest" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
+            <img class="img-fluid" src="./Photo/ForestBig.jpg">
+            <div class="ViewWindow">
+                <a href="#" class="Off text-end">X</a>
+                <div class="row text-center buttonChange border border-dark bg-white">
+                    <button class="col-2">+</button>
+                    <div class="col-8">
+                        <p class="mt-2">Wood Cuters</p>
+                        <p id="FarmWorkersCounter">0</p>
+                    </div>
+                    <button class="col-2">-</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="City" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
+            <img class="img-fluid" src="./Photo/CityBig.jpg">
+            <div class="ViewWindow">
+                <a href="#" class="Off text-end">X</a>
+                <div class="row text-center buttonChange border border-dark bg-white">
+                    <button class="col-2">+</button>
+                    <div class="col-8">
+                        <p class="mt-2">Scouts</p>
+                        <p id="FarmWorkersCounter">0</p>
+                    </div>
+                    <button class="col-2">-</button>
+                </div>
+            </div>
+        </div>
 
     </div>
 
-    
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
     crossorigin="anonymous"></script>
-    <script src="./Js/script.js"></script>
+<script src="./Js/script.js"></script>
+
 </html>

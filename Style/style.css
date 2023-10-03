@@ -130,7 +130,28 @@ body {
     justify-content: center;
     align-items: flex-end;
 }
-#Farm {
-    margin: 120px 0px 0px 26vw;
+.WindowOpenHtml {
+    margin: 11vh 0px 0px 26vw;
     max-width: 48vw;
+}
+.Off {
+    position: absolute;
+    margin: -4vh 0px 0px 42vw;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.buttonChange {
+    vertical-align: bottom;
+}
+.ViewWindow {
+    position: absolute;
+    margin: -54vh 0px 0px 4vw;
+    font-size: large;
+    line-height: 50%;
+}
+button {
+    background: none;
+    border: none;
+    
 }

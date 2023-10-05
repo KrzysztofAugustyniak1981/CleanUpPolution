@@ -34,7 +34,7 @@
         </div>
         <div class="second-column">
             <div class="SC-one align-items-center">
-                <a href="#"><img id="hPollution" class="w-75 img-fluid rounded" src="./Photo/Polution1.jpg"></a>
+                <a href="#"><img id="hPollution" class="w-75 img-fluid" src="./Photo/Polution1.jpg"></a>
             </div>
             <div class="SC-two">
                 <a href="#"><img id="hGarage" class="w-75 img-fluid" src="./Photo/Garage.jpg"></a>
@@ -55,10 +55,10 @@
             </div>
         </div>
 
-        <div id="Farm" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 d-none WindowOpenHtml">
+        <div id="Farm" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
             <img class="img-fluid" src="./Photo/FarmaBig.jpg">
             <div class="ViewWindow ">
-                <a href="#" class="Off text-end">X</a>
+                <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark">
                     <button class="col-2">+</button>
                     <div class="col-8">
@@ -70,10 +70,10 @@
             </div>
         </div>
 
-        <div id="Pollution" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
+        <div id="wPollution" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
             <img class="img-fluid" src="./Photo/PolutionBig.jpg">
             <div class="ViewWindow bg-dark text-warning">
-                <a href="#" class="Off text-end text-white">X</a>
+                <a href="#" onclick="offAll()" id="Off" class="Off text-end text-white">X</a>
                 <div class="row text-center buttonChange border border-dark">
                     <button class="col-2 text-white">+</button>
                     <div class="col-8">
@@ -88,7 +88,7 @@
         <div id="Mountains" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
             <img class="img-fluid" src="./Photo/MountainsBig.jpg">
             <div class="ViewWindow">
-                <a href="#" class="Off text-end">X</a>
+                <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark">
                     <button class="col-2 text-white">+</button>
                     <div class="col-8">
@@ -103,7 +103,7 @@
         <div id="Garage" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
             <img class="img-fluid" src="./Photo/GarageBig.jpg">
             <div class="ViewWindow">
-                <a href="#" class="Off text-end">X</a>
+                <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-white">
                     <button class="col-2">+</button>
                     <div class="col-8">
@@ -118,7 +118,7 @@
         <div id="Vilige" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
             <img class="img-fluid" src="./Photo/HomeBig.jpg">
             <div class="ViewWindow">
-                <a href="#" class="Off text-end">X</a>
+                <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-white">
                     <button class="col-2">+</button>
                     <div class="col-8">
@@ -133,7 +133,7 @@
         <div id="Forest" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
             <img class="img-fluid" src="./Photo/ForestBig.jpg">
             <div class="ViewWindow">
-                <a href="#" class="Off text-end">X</a>
+                <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-white">
                     <button class="col-2">+</button>
                     <div class="col-8">
@@ -148,7 +148,7 @@
         <div id="City" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
             <img class="img-fluid" src="./Photo/CityBig.jpg">
             <div class="ViewWindow">
-                <a href="#" class="Off text-end">X</a>
+                <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-white">
                     <button class="col-2">+</button>
                     <div class="col-8">

@@ -10,15 +10,15 @@
     <link rel="stylesheet" href="./Style/style.css" type="text/css" />
 </head>
 
-<body>
+<body onload="refreshCounters()">
     <div class="Main-info">
-        <div class="Counter" id="Food">Food : </div>
-        <div class="Counter" id="Wood">Wood : </div>
-        <div class="Counter" id="Stone">Stone : </div>
-        <div class="Counter" id="Skils">Skils lvl : </div>
-        <div class="Counter" id="Population">Pop. : </div>
-        <div class="Counter" id="Defensive">Defensive : </div>
-        <div class="Counter" id="Pollution">Pollution lvl : </div>
+        <div class="Counter" id="Food">Food : 0</div>
+        <div class="Counter" id="Wood">Wood : 0</div>
+        <div class="Counter" id="Stone">Stone : 0</div>
+        <div class="Counter" id="Skils">Skils lvl : 0</div>
+        <div class="Counter" id="Population">Pop. : 0</div>
+        <div class="Counter" id="Defensive">Defensive : 0</div>
+        <div class="Counter" id="Pollution">Pollution lvl : 0</div>
     </div>
     <div class="Main-window">
         <div class="first-column">
@@ -119,13 +119,13 @@
             <img class="img-fluid" src="./Photo/HomeBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-white">
-                    <button class="col-2">+</button>
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                    <p class="col-12" id="Houses"><br>Free Bads 1/5</p>
+                    <button class="col-2 bg-white rounded">+</button>
                     <div class="col-8">
-                        <p class="mt-2">Students</p>
-                        <p id="FarmWorkersCounter">0</p>
+                        <p id="FarmWorkersCounter" class="mt-2">People add: 0</p>
                     </div>
-                    <button class="col-2">-</button>
+                    <button class="col-2 bg-white rounded">-</button>
                 </div>
             </div>
         </div>

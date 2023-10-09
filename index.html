@@ -12,13 +12,13 @@
 
 <body onload="refreshCounters()">
     <div class="Main-info">
-        <div class="Counter" id="Food">Food : 0</div>
-        <div class="Counter" id="Wood">Wood : 0</div>
-        <div class="Counter" id="Stone">Stone : 0</div>
-        <div class="Counter" id="Skils">Skils lvl : 0</div>
-        <div class="Counter" id="Population">Pop. : 0</div>
-        <div class="Counter" id="Defensive">Defensive : 0</div>
-        <div class="Counter" id="Pollution">Pollution lvl : 0</div>
+        <div class="Counter">Food : <span id="Food">0</span></div>
+        <div class="Counter">Wood : <span id="Wood">0</span></div>
+        <div class="Counter">Stone : <span id="Stone">0</span></div>
+        <div class="Counter">Skils lvl : <span id="Skils">0</span></div>
+        <div class="Counter">Pop. : <span id="FreePeople">0</span>/<span id="Population">0</span></div>
+        <div class="Counter">Defensive : <span id="Defensive">0</span></div>
+        <div class="Counter">Pollution lvl : <span id="Pollution">0</span></div>
     </div>
     <div class="Main-window">
         <div class="first-column">
@@ -55,17 +55,32 @@
             </div>
         </div>
 
+        <div id="Vilige" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
+            <img class="img-fluid" src="./Photo/HomeBig.jpg">
+            <div class="ViewWindow">
+                <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                    <p class="col-12"><br>Free Bads <span id="FreeBadsCounter" >1</span>/<span id="HousesCounter">5</span></p>
+                    <button class="col-2 bg-white rounded" onclick="AddHouse()">+</button>
+                    <div class="col-8">
+                        <p class="mt-2">Hause building: <span id="HauseBuildingCounter">0</span></p>
+                    </div>
+                    <button class="col-2 bg-white rounded">-</button>
+                </div>
+            </div>
+        </div>
+
         <div id="Farm" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
             <img class="img-fluid" src="./Photo/FarmaBig.jpg">
             <div class="ViewWindow ">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark">
-                    <button class="col-2">+</button>
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                    <p class="col-12" id="Farmers"><br>Farmers <span id="FarmersCounter">0</span></p>
+                    <button class="col-2 bg-white rounded">+</button>
                     <div class="col-8">
-                        <p class="">Farm Workers</p>
-                        <p id="FarmWorkersCounter">0</p>
+                        <p class="mt-2">Farmers add: <span id="AddedFarmWorkers">0</span></p>
                     </div>
-                    <button class="col-2">-</button>
+                    <button class="col-2 bg-white rounded">-</button>
                 </div>
             </div>
         </div>
@@ -74,13 +89,13 @@
             <img class="img-fluid" src="./Photo/PolutionBig.jpg">
             <div class="ViewWindow bg-dark text-warning">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end text-white">X</a>
-                <div class="row text-center buttonChange border border-dark">
-                    <button class="col-2 text-white">+</button>
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                    <p class="col-12"><br>Pollution lvl : <span id="PollutionLvlCounter">1</span></p>
+                    <button class="col-2 bg-white rounded">+</button>
                     <div class="col-8">
-                        <p class="">Cleaners</p>
-                        <p id="FarmWorkersCounter">0</p>
+                        <p class="mt-2">Cleaners add: <span id="CleanersAdd">0</span></p>
                     </div>
-                    <button class="col-2 text-white">-</button>
+                    <button class="col-2 bg-white rounded">-</button>
                 </div>
             </div>
         </div>
@@ -89,13 +104,13 @@
             <img class="img-fluid" src="./Photo/MountainsBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark">
-                    <button class="col-2 text-white">+</button>
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                    <p class="col-12"><br>Miners : <span id="MinersCounter">0</span></p>
+                    <button class="col-2 bg-white rounded">+</button>
                     <div class="col-8">
-                        <p class="mt-2">Miners</p>
-                        <p id="FarmWorkersCounter">0</p>
+                        <p class="mt-2">Miners add: <span id="MinersAddedCounter">0</span></p>
                     </div>
-                    <button class="col-2 text-white">-</button>
+                    <button class="col-2 bg-white rounded">-</button>
                 </div>
             </div>
         </div>
@@ -104,26 +119,11 @@
             <img class="img-fluid" src="./Photo/GarageBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-white">
-                    <button class="col-2">+</button>
-                    <div class="col-8">
-                        <p class="mt-2">Students</p>
-                        <p id="FarmWorkersCounter">0</p>
-                    </div>
-                    <button class="col-2">-</button>
-                </div>
-            </div>
-        </div>
-
-        <div id="Vilige" class="position-absolute top-absolute border border-dark border-5 top-0 start-0 WindowOpenHtml d-none">
-            <img class="img-fluid" src="./Photo/HomeBig.jpg">
-            <div class="ViewWindow">
-                <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
-                    <p class="col-12" id="Houses"><br>Free Bads 1/5</p>
+                    <p class="col-12"><br>People left to learn : <span id="PeopleToLearnCounter">1</span></p>
                     <button class="col-2 bg-white rounded">+</button>
                     <div class="col-8">
-                        <p id="FarmWorkersCounter" class="mt-2">People add: 0</p>
+                        <p class="mt-2">People add: <span id="StudentsAddedCounter">0</span></p>
                     </div>
                     <button class="col-2 bg-white rounded">-</button>
                 </div>
@@ -134,13 +134,13 @@
             <img class="img-fluid" src="./Photo/ForestBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-white">
-                    <button class="col-2">+</button>
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                    <p class="col-12"><br>Lumberjacks <span id="LumberjacksCounter">0</span></p>
+                    <button class="col-2 bg-white rounded">+</button>
                     <div class="col-8">
-                        <p class="mt-2">Wood Cuters</p>
-                        <p id="FarmWorkersCounter">0</p>
+                        <p class="mt-2">Lumberjacks add: <span id="LumberjacksAddedCounter">0</span></p>
                     </div>
-                    <button class="col-2">-</button>
+                    <button class="col-2 bg-white rounded">-</button>
                 </div>
             </div>
         </div>
@@ -149,13 +149,13 @@
             <img class="img-fluid" src="./Photo/CityBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-white">
-                    <button class="col-2">+</button>
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                    <p class="col-12"><br>Scouts</p>
+                    <button class="col-2 bg-white rounded">+</button>
                     <div class="col-8">
-                        <p class="mt-2">Scouts</p>
-                        <p id="FarmWorkersCounter">0</p>
+                        <p class="mt-2">People add: <span id="ScoutsAddedCounter">0</span></p>
                     </div>
-                    <button class="col-2">-</button>
+                    <button class="col-2 bg-white rounded">-</button>
                 </div>
             </div>
         </div>

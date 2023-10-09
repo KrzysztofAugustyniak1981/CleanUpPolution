@@ -1,12 +1,17 @@
 /*Zmienne*/
 let food = 2;
-let wood = 0;
-let stone = 0;
+let wood = 5;
+let stone = 5;
 let skils = 0;
 let pop = 1;
 let freeHouse = 5;
 let defensive = 0;
 let pollution = 1;
+let workers = 0;
+let freepeople = pop - workers;
+
+/*let for end of turn*/
+let nfreeHouse = 5;
 
 /*uchwyty*/
 const viewFarm = document.getElementById("Farm");
@@ -22,14 +27,32 @@ const counterViewFood = document.getElementById("Food");
 const counterViewWood = document.getElementById("Wood");
 const counterViewStone = document.getElementById("Stone");
 const counterViewSkils = document.getElementById("Skils");
+const counterFreePeople = document.getElementById("FreePeople");
 const counterViewPopulation = document.getElementById("Population");
 const counterViewDefensive = document.getElementById("Defensive");
 const counterViewPollution = document.getElementById("Pollution");
+/*small counters*/
+const houseCounter = document.getElementById("HousesCounter");
+const freeHouseCounter = document.getElementById("FreeBadsCounter");
+const houseBuildingCounter = document.getElementById("HauseBuildingCounter")
+const farmerCounter = document.getElementById("FarmersCounter");
+const addedFarmers = document.getElementById("AddedFarmWorkers");
+const pollutionCounterSmall = document.getElementById("PollutionLvlCounter");
+const cleanersAddCounter = document.getElementById("CleanersAdd");
+const minersCounter = document.getElementById("MinersCounter");
+const minersAddedCounter = document.getElementById("MinersAddedCounter");
+const peopleToLearnCounter = document.getElementById("PeopleToLearnCounter");
+const studentsAddedCounter = document.getElementById("StudentsAddedCounter");
+const lumberjacksCounter = document.getElementById("LumberjacksCounter");
+const lumberjacksAddedCounter = document.getElementById("LumberjacksAddedCounter");
+const scoutsAddedCounter = document.getElementById("ScoutsAddedCounter");
+
+
 
 /*Funkcje*/
+/*View Windows*/
 function ViewFarm() {
   viewFarm.classList.remove("d-none");
-  
 }
 
 function ViewHome() {
@@ -55,7 +78,6 @@ function ViewMountains() {
 function ViewCity() {
   viewCity.classList.remove("d-none");
 }
-
 /*Window Off*/
 function offAll() {
   viewFarm.classList.add("d-none");
@@ -67,15 +89,29 @@ function offAll() {
   viewCity.classList.add("d-none");
   refreshCounters()
 }
+/*Function for quantity change*/
+function AddHouse() {
+  if (freepeople>0 & wood>4 & stone>1) {
+  workers--;
+  nfreeHouse += 5;
+  wood -= 5;
+  stone -= 2;
+  houseBuildingCounter.innerHTML = nfreeHouse
+  }
+  else {}
+  refreshCounters();
+}
+
+
 
 function refreshCounters() {
-  counterViewFood.innerHTML = "Food : " + food;
-  counterViewWood.innerHTML = "Wood : " + wood;
-  counterViewStone.innerHTML = "Stone : " + stone;
-  counterViewSkils.innerHTML = "Skils lvl : " + skils;
-  counterViewPopulation.innerHTML = "Pop. : " + pop;
-  counterViewDefensive.innerHTML = "Defensive : " + defensive;
-  counterViewPollution.innerHTML = "Pollution lvl : " + pollution;
+  counterViewFood.innerHTML = food;
+  counterViewWood.innerHTML = wood;
+  counterViewStone.innerHTML = stone;
+  counterViewSkils.innerHTML = skils;
+  counterViewPopulation.innerHTML = pop;
+  counterViewDefensive.innerHTML = defensive;
+  counterViewPollution.innerHTML = pollution;
 }
 
 /*EventListner*/

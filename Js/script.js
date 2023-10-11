@@ -1,5 +1,6 @@
 /*Zmienne*/
 let food = 2;
+let farmers = 0;
 let wood = 5;
 let stone = 5;
 let skils = 0;
@@ -8,10 +9,16 @@ let freeHouse = 5;
 let defensive = 0;
 let pollution = 1;
 let workers = 0;
-let freepeople = pop - workers;
+let freeWorkers = pop - workers;
 
 /*let for end of turn*/
-let nfreeHouse = 5;
+let nfreeHouse = 0;
+let addfarmers = 0;
+let addCleaners = 0;
+let addMiners = 0;
+let addStudents = 0;
+let addLumberjacks = 0;
+let addScouts = 0;
 
 /*uchwyty*/
 const viewFarm = document.getElementById("Farm");
@@ -38,7 +45,7 @@ const houseBuildingCounter = document.getElementById("HauseBuildingCounter")
 const farmerCounter = document.getElementById("FarmersCounter");
 const addedFarmers = document.getElementById("AddedFarmWorkers");
 const pollutionCounterSmall = document.getElementById("PollutionLvlCounter");
-const cleanersAddCounter = document.getElementById("CleanersAdd");
+const cleanersCounter = document.getElementById("CleanersAddView");
 const minersCounter = document.getElementById("MinersCounter");
 const minersAddedCounter = document.getElementById("MinersAddedCounter");
 const peopleToLearnCounter = document.getElementById("PeopleToLearnCounter");
@@ -91,15 +98,160 @@ function offAll() {
 }
 /*Function for quantity change*/
 function AddHouse() {
-  if (freepeople>0 & wood>4 & stone>1) {
-  workers--;
+  if (freeWorkers>0 & wood>4 & stone>1) {
+  workers++;
   nfreeHouse += 5;
   wood -= 5;
   stone -= 2;
+  freeWorkers = pop - workers;
   houseBuildingCounter.innerHTML = nfreeHouse
   }
   else {}
   refreshCounters();
+}
+function DeductHouse() {
+  if (nfreeHouse>0) {
+  workers--;
+  nfreeHouse -= 5;
+  wood += 5;
+  stone += 2;
+  freeWorkers = pop - workers;
+  houseBuildingCounter.innerHTML = nfreeHouse
+  } 
+  else {}
+  refreshCounters();
+}
+
+function AddFarmers() {
+  if (freeWorkers>0) {
+    addfarmers++ ;
+    workers++ ;
+    freeWorkers-- ;
+    addedFarmers.innerHTML = addfarmers;
+  }
+  else {}
+  refreshCounters();
+}
+function DeductFarmers() {
+  if (addfarmers>0) {
+    addfarmers-- ;
+    workers-- ;
+    freeWorkers++ ;
+    addedFarmers.innerHTML = addfarmers;
+  }
+  else {}
+  refreshCounters();
+}
+
+function AddCleaners() {
+  if (freeWorkers>0) {
+    addCleaners++;
+    workers++;
+    freeWorkers--;
+    cleanersCounter.innerHTML = addCleaners;
+  }
+  else {}
+  refreshCounters();
+}
+function DeductCleaners() {
+  if (addCleaners>0) {
+    addCleaners-- ;
+    workers-- ;
+    freeWorkers++ ;
+    cleanersCounter.innerHTML = addCleaners;
+  }
+  else {}
+  refreshCounters();
+}
+
+function AddMiners() {
+  if (freeWorkers>0) {
+    addMiners++;
+    workers++;
+    freeWorkers--;
+    minersAddedCounter.innerHTML = addMiners;
+  }
+  else {}
+  refreshCounters();
+}
+function DeductMiners() {
+  if (addMiners>0) {
+    addMiners-- ;
+    workers-- ;
+    freeWorkers++ ;
+    minersAddedCounter.innerHTML = addMiners;
+  }
+  else {}
+  refreshCounters();
+}
+
+function AddStudents() {
+  if (freeWorkers>0) {
+    addStudents++;
+    workers++;
+    freeWorkers--;
+    studentsAddedCounter.innerHTML = addStudents;
+  }
+  else {}
+  refreshCounters();
+}
+function DeductStudents() {
+  if (addStudents>0) {
+    addStudents-- ;
+    workers-- ;
+    freeWorkers++ ;
+    studentsAddedCounter.innerHTML = addStudents;
+  }
+  else {}
+  refreshCounters();
+}
+
+function AddLumberjacks() {
+  if (freeWorkers>0) {
+    addLumberjacks++;
+    workers++;
+    freeWorkers--;
+    lumberjacksAddedCounter.innerHTML = addLumberjacks;
+  }
+  else {}
+  refreshCounters();
+}
+function DeductLumberjacks() {
+  if (addLumberjacks>0) {
+    addLumberjacks-- ;
+    workers-- ;
+    freeWorkers++ ;
+    lumberjacksAddedCounter.innerHTML = addLumberjacks;
+  }
+  else {}
+  refreshCounters();
+}
+
+function AddScouts() {
+  if (freeWorkers>0) {
+    addScouts++;
+    workers++;
+    freeWorkers--;
+    scoutsAddedCounter.innerHTML = addScouts;
+  }
+  else {}
+  refreshCounters();
+}
+function DeductScouts() {
+  if (addScouts>0) {
+    addScouts-- ;
+    workers-- ;
+    freeWorkers++ ;
+    scoutsAddedCounter.innerHTML = addScouts;
+  }
+  else {}
+  refreshCounters();
+}
+
+/*End Of Turn*/
+
+function EndOfTurn() {
+  
 }
 
 

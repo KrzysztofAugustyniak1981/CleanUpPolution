@@ -48,10 +48,10 @@
                 <a href="#"><img id="hMountains" class="w-75 img-fluid rounded" src="./Photo/Mountains.jpg"></a>
             </div>
             <div class="TC-two">
-
-            </div>
-            <div class="TC-three">
                 <a href="#"><img id="hCity" class="w-75 img-fluid rounded" src="./Photo/City.jpg"></a>
+            </div>
+            <div class="TC-three py-5">
+                <button type="button" class="btn btn-secondary btn-large" onclick="EndOfTurn()">END TURN</button>
             </div>
         </div>
 
@@ -65,7 +65,7 @@
                     <div class="col-8">
                         <p class="mt-2">Hause building: <span id="HauseBuildingCounter">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded">-</button>
+                    <button class="col-2 bg-white rounded" onclick="DeductHouse()">-</button>
                 </div>
             </div>
         </div>
@@ -76,11 +76,11 @@
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
                     <p class="col-12" id="Farmers"><br>Farmers <span id="FarmersCounter">0</span></p>
-                    <button class="col-2 bg-white rounded">+</button>
+                    <button class="col-2 bg-white rounded" onclick="AddFarmers()">+</button>
                     <div class="col-8">
                         <p class="mt-2">Farmers add: <span id="AddedFarmWorkers">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded">-</button>
+                    <button class="col-2 bg-white rounded" onclick="DeductFarmers()">-</button>
                 </div>
             </div>
         </div>
@@ -91,11 +91,11 @@
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end text-white">X</a>
                 <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
                     <p class="col-12"><br>Pollution lvl : <span id="PollutionLvlCounter">1</span></p>
-                    <button class="col-2 bg-white rounded">+</button>
+                    <button class="col-2 bg-white rounded" onclick="AddCleaners()">+</button>
                     <div class="col-8">
-                        <p class="mt-2">Cleaners add: <span id="CleanersAdd">0</span></p>
+                        <p class="mt-2">Cleaners add: <span id="CleanersAddView">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded">-</button>
+                    <button class="col-2 bg-white rounded" onclick="DeductCleaners()">-</button>
                 </div>
             </div>
         </div>
@@ -106,11 +106,11 @@
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
                     <p class="col-12"><br>Miners : <span id="MinersCounter">0</span></p>
-                    <button class="col-2 bg-white rounded">+</button>
+                    <button class="col-2 bg-white rounded" onclick="AddMiners()">+</button>
                     <div class="col-8">
                         <p class="mt-2">Miners add: <span id="MinersAddedCounter">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded">-</button>
+                    <button class="col-2 bg-white rounded" onclick="DeductMiners()">-</button>
                 </div>
             </div>
         </div>
@@ -121,11 +121,11 @@
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
                     <p class="col-12"><br>People left to learn : <span id="PeopleToLearnCounter">1</span></p>
-                    <button class="col-2 bg-white rounded">+</button>
+                    <button class="col-2 bg-white rounded" onclick="AddStudents()">+</button>
                     <div class="col-8">
                         <p class="mt-2">People add: <span id="StudentsAddedCounter">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded">-</button>
+                    <button class="col-2 bg-white rounded" onclick="DeductStudents()">-</button>
                 </div>
             </div>
         </div>
@@ -136,11 +136,11 @@
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
                     <p class="col-12"><br>Lumberjacks <span id="LumberjacksCounter">0</span></p>
-                    <button class="col-2 bg-white rounded">+</button>
+                    <button class="col-2 bg-white rounded" onclick="AddLumberjacks()">+</button>
                     <div class="col-8">
                         <p class="mt-2">Lumberjacks add: <span id="LumberjacksAddedCounter">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded">-</button>
+                    <button class="col-2 bg-white rounded" onclick="DeductLumberjacks()">-</button>
                 </div>
             </div>
         </div>
@@ -151,11 +151,11 @@
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
                 <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
                     <p class="col-12"><br>Scouts</p>
-                    <button class="col-2 bg-white rounded">+</button>
+                    <button class="col-2 bg-white rounded" onclick="AddScouts()">+</button>
                     <div class="col-8">
                         <p class="mt-2">People add: <span id="ScoutsAddedCounter">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded">-</button>
+                    <button class="col-2 bg-white rounded" onclick="DeductScouts()">-</button>
                 </div>
             </div>
         </div>

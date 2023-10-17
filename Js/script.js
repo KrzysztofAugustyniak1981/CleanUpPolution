@@ -2,18 +2,22 @@
 let food = 2;
 let farmers = 0;
 let wood = 5;
+let lumberjacks = 0;
 let stone = 5;
+let miners = 0;
 let skils = 0;
-let pop = 1;
-let freeHouse = 5;
+let people = 1; /*function random*/
+let house = 5;
 let defensive = 0;
 let pollution = 1;
 let workers = 0;
-let freeWorkers = pop - workers;
+let freeWorkers = 1;
+let i = 0;
 
 /*let for end of turn*/
 let nfreeHouse = 0;
-let addfarmers = 0;
+let bulider = 0;
+let addFarmers = 0;
 let addCleaners = 0;
 let addMiners = 0;
 let addStudents = 0;
@@ -34,7 +38,7 @@ const counterViewFood = document.getElementById("Food");
 const counterViewWood = document.getElementById("Wood");
 const counterViewStone = document.getElementById("Stone");
 const counterViewSkils = document.getElementById("Skils");
-const counterFreePeople = document.getElementById("FreePeople");
+const counterPeople = document.getElementById("FreePeople");
 const counterViewPopulation = document.getElementById("Population");
 const counterViewDefensive = document.getElementById("Defensive");
 const counterViewPollution = document.getElementById("Pollution");
@@ -99,24 +103,22 @@ function offAll() {
 /*Function for quantity change*/
 function AddHouse() {
   if (freeWorkers>0 & wood>4 & stone>1) {
-  workers++;
+  bulider++;
   nfreeHouse += 5;
   wood -= 5;
   stone -= 2;
-  freeWorkers = pop - workers;
-  houseBuildingCounter.innerHTML = nfreeHouse
+  freeWorkers-- ;
   }
   else {}
   refreshCounters();
 }
 function DeductHouse() {
   if (nfreeHouse>0) {
-  workers--;
+  bulider--;
   nfreeHouse -= 5;
   wood += 5;
   stone += 2;
-  freeWorkers = pop - workers;
-  houseBuildingCounter.innerHTML = nfreeHouse
+  freeWorkers++ ;
   } 
   else {}
   refreshCounters();
@@ -124,20 +126,18 @@ function DeductHouse() {
 
 function AddFarmers() {
   if (freeWorkers>0) {
-    addfarmers++ ;
+    addFarmers++ ;
     workers++ ;
     freeWorkers-- ;
-    addedFarmers.innerHTML = addfarmers;
   }
   else {}
   refreshCounters();
 }
 function DeductFarmers() {
-  if (addfarmers>0) {
-    addfarmers-- ;
+  if (addFarmers>0) {
+    addFarmers-- ;
     workers-- ;
     freeWorkers++ ;
-    addedFarmers.innerHTML = addfarmers;
   }
   else {}
   refreshCounters();
@@ -148,7 +148,6 @@ function AddCleaners() {
     addCleaners++;
     workers++;
     freeWorkers--;
-    cleanersCounter.innerHTML = addCleaners;
   }
   else {}
   refreshCounters();
@@ -158,7 +157,6 @@ function DeductCleaners() {
     addCleaners-- ;
     workers-- ;
     freeWorkers++ ;
-    cleanersCounter.innerHTML = addCleaners;
   }
   else {}
   refreshCounters();
@@ -169,7 +167,6 @@ function AddMiners() {
     addMiners++;
     workers++;
     freeWorkers--;
-    minersAddedCounter.innerHTML = addMiners;
   }
   else {}
   refreshCounters();
@@ -179,7 +176,6 @@ function DeductMiners() {
     addMiners-- ;
     workers-- ;
     freeWorkers++ ;
-    minersAddedCounter.innerHTML = addMiners;
   }
   else {}
   refreshCounters();
@@ -190,7 +186,6 @@ function AddStudents() {
     addStudents++;
     workers++;
     freeWorkers--;
-    studentsAddedCounter.innerHTML = addStudents;
   }
   else {}
   refreshCounters();
@@ -200,7 +195,6 @@ function DeductStudents() {
     addStudents-- ;
     workers-- ;
     freeWorkers++ ;
-    studentsAddedCounter.innerHTML = addStudents;
   }
   else {}
   refreshCounters();
@@ -211,7 +205,6 @@ function AddLumberjacks() {
     addLumberjacks++;
     workers++;
     freeWorkers--;
-    lumberjacksAddedCounter.innerHTML = addLumberjacks;
   }
   else {}
   refreshCounters();
@@ -221,7 +214,6 @@ function DeductLumberjacks() {
     addLumberjacks-- ;
     workers-- ;
     freeWorkers++ ;
-    lumberjacksAddedCounter.innerHTML = addLumberjacks;
   }
   else {}
   refreshCounters();
@@ -232,7 +224,6 @@ function AddScouts() {
     addScouts++;
     workers++;
     freeWorkers--;
-    scoutsAddedCounter.innerHTML = addScouts;
   }
   else {}
   refreshCounters();
@@ -242,7 +233,6 @@ function DeductScouts() {
     addScouts-- ;
     workers-- ;
     freeWorkers++ ;
-    scoutsAddedCounter.innerHTML = addScouts;
   }
   else {}
   refreshCounters();
@@ -251,7 +241,54 @@ function DeductScouts() {
 /*End Of Turn*/
 
 function EndOfTurn() {
+  i++
+  farmers += addFarmers;
+  addFarmers = 0;
+  food += farmers * 2;
+
+  lumberjacks += addLumberjacks;
+  addLumberjacks = 0;
+  wood += lumberjacks * 2;
+
+  miners += addMiners;
+  addMiners = 0;
+  stone += miners * 1;
+
+  skils += addStudents/10;
+  freeWorkers += addStudents;
+  addStudents = 0;
+
+  freeWorkers += bulider;
+  house += nfreeHouse;
+  bulider = 0;
+  nfreeHouse = 0;
+
+  if (i < 5) {
+  pollution = pollution + 0.25;/*Increas for end of turn*/
+  pollution -= (addCleaners/2);
+  freeWorkers += addCleaners;
+  addCleaners = 0;
+  }
+  else {
+    pollution++/*Increas for end of turn*/
+  pollution -= (addCleaners/5);
+  freeWorkers += addCleaners;
+  addCleaners = 0;
+  }
+  /*city*/
   
+    people += 2*addScouts;
+    freeWorkers += 2*addScouts;
+    food += 1*addScouts;
+    wood++;
+    stone++;
+    freeWorkers += addScouts;
+    addScouts = 0;
+  
+  
+
+
+  refreshCounters()
 }
 
 
@@ -261,9 +298,24 @@ function refreshCounters() {
   counterViewWood.innerHTML = wood;
   counterViewStone.innerHTML = stone;
   counterViewSkils.innerHTML = skils;
-  counterViewPopulation.innerHTML = pop;
+  counterPeople.innerHTML = people
+  counterViewPopulation.innerHTML = house;
   counterViewDefensive.innerHTML = defensive;
   counterViewPollution.innerHTML = pollution;
+  pollutionCounterSmall.innerHTML = pollution;
+  houseBuildingCounter.innerHTML = nfreeHouse;
+  freeHouseCounter.innerHTML = people;
+  houseCounter.innerHTML = house;
+  addedFarmers.innerHTML = addFarmers;
+  farmerCounter.innerHTML = farmers;
+  cleanersCounter.innerHTML = addCleaners;
+  minersAddedCounter.innerHTML = addMiners;
+  minersCounter.innerHTML = miners;
+  studentsAddedCounter.innerHTML = addStudents;
+  peopleToLearnCounter.innerHTML = freeWorkers;
+  lumberjacksAddedCounter.innerHTML = addLumberjacks;
+  lumberjacksCounter.innerHTML = lumberjacks;
+  scoutsAddedCounter.innerHTML = addScouts;
 }
 
 /*EventListner*/

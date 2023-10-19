@@ -6,13 +6,14 @@ let lumberjacks = 0;
 let stone = 5;
 let miners = 0;
 let skils = 0;
-let people = 1; /*function random*/
+let people = 2; /*function random*/
 let house = 5;
 let defensive = 0;
 let pollution = 1;
 let workers = 0;
-let freeWorkers = 1;
+let freeWorkers = 2;
 let i = 0;
+let sliderValue = 0;
 
 /*let for end of turn*/
 let nfreeHouse = 0;
@@ -45,25 +46,28 @@ const counterViewPollution = document.getElementById("Pollution");
 /*small counters*/
 const houseCounter = document.getElementById("HousesCounter");
 const freeHouseCounter = document.getElementById("FreeBadsCounter");
-const houseBuildingCounter = document.getElementById("HauseBuildingCounter")
+const houseBuildingCounter = document.getElementById("HauseBuildingCounter");
 const farmerCounter = document.getElementById("FarmersCounter");
 const addedFarmers = document.getElementById("AddedFarmWorkers");
 const pollutionCounterSmall = document.getElementById("PollutionLvlCounter");
 const cleanersCounter = document.getElementById("CleanersAddView");
 const minersCounter = document.getElementById("MinersCounter");
 const minersAddedCounter = document.getElementById("MinersAddedCounter");
-const peopleToLearnCounter = document.getElementById("PeopleToLearnCounter");
+const peopleToLearnCounter = document.getElementsByClassName(
+  "PeopleToLearnCounter"
+);
 const studentsAddedCounter = document.getElementById("StudentsAddedCounter");
 const lumberjacksCounter = document.getElementById("LumberjacksCounter");
-const lumberjacksAddedCounter = document.getElementById("LumberjacksAddedCounter");
+const lumberjacksAddedCounter = document.getElementById(
+  "LumberjacksAddedCounter"
+);
 const scoutsAddedCounter = document.getElementById("ScoutsAddedCounter");
-
-
 
 /*Funkcje*/
 /*View Windows*/
 function ViewFarm() {
   viewFarm.classList.remove("d-none");
+
 }
 
 function ViewHome() {
@@ -98,153 +102,165 @@ function offAll() {
   viewForest.classList.add("d-none");
   viewMountains.classList.add("d-none");
   viewCity.classList.add("d-none");
-  refreshCounters()
+  refreshCounters();
 }
 /*Function for quantity change*/
 function AddHouse() {
-  if (freeWorkers>0 & wood>4 & stone>1) {
-  bulider++;
-  nfreeHouse += 5;
-  wood -= 5;
-  stone -= 2;
-  freeWorkers-- ;
+  if ((freeWorkers > 0) & (wood > 4) & (stone > 1)) {
+    bulider++;
+    nfreeHouse += 5;
+    wood -= 5;
+    stone -= 2;
+    freeWorkers--;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 function DeductHouse() {
-  if (nfreeHouse>0) {
-  bulider--;
-  nfreeHouse -= 5;
-  wood += 5;
-  stone += 2;
-  freeWorkers++ ;
-  } 
-  else {}
+  if (nfreeHouse > 0) {
+    bulider--;
+    nfreeHouse -= 5;
+    wood += 5;
+    stone += 2;
+    freeWorkers++;
+  } else {
+  }
   refreshCounters();
 }
 
 function AddFarmers() {
-  if (freeWorkers>0) {
-    addFarmers++ ;
-    workers++ ;
-    freeWorkers-- ;
+  if (freeWorkers > 0) {
+    addFarmers++;
+    workers++;
+    freeWorkers--;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 function DeductFarmers() {
-  if (addFarmers>0) {
-    addFarmers-- ;
-    workers-- ;
-    freeWorkers++ ;
+  if (addFarmers > 0) {
+    addFarmers--;
+    workers--;
+    freeWorkers++;
+  } else if (farmers > 0) {
+    farmers--;
+    workers--;
+    freeWorkers++;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 
 function AddCleaners() {
-  if (freeWorkers>0) {
+  if (freeWorkers > 0) {
     addCleaners++;
     workers++;
     freeWorkers--;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 function DeductCleaners() {
-  if (addCleaners>0) {
-    addCleaners-- ;
-    workers-- ;
-    freeWorkers++ ;
+  if (addCleaners > 0) {
+    addCleaners--;
+    workers--;
+    freeWorkers++;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 
 function AddMiners() {
-  if (freeWorkers>0) {
+  if (freeWorkers > 0) {
     addMiners++;
     workers++;
     freeWorkers--;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 function DeductMiners() {
-  if (addMiners>0) {
-    addMiners-- ;
-    workers-- ;
-    freeWorkers++ ;
+  if (addMiners > 0) {
+    addMiners--;
+    workers--;
+    freeWorkers++;
+  } else if (miners > 0) {
+    miners--;
+    workers--;
+    freeWorkers++;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 
 function AddStudents() {
-  if (freeWorkers>0) {
+  if (freeWorkers > 0) {
     addStudents++;
     workers++;
     freeWorkers--;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 function DeductStudents() {
-  if (addStudents>0) {
-    addStudents-- ;
-    workers-- ;
-    freeWorkers++ ;
+  if (addStudents > 0) {
+    addStudents--;
+    workers--;
+    freeWorkers++;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 
 function AddLumberjacks() {
-  if (freeWorkers>0) {
+  if (freeWorkers > 0) {
     addLumberjacks++;
     workers++;
     freeWorkers--;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 function DeductLumberjacks() {
-  if (addLumberjacks>0) {
-    addLumberjacks-- ;
-    workers-- ;
-    freeWorkers++ ;
+  if (addLumberjacks > 0) {
+    addLumberjacks--;
+    workers--;
+    freeWorkers++;
+  } else if (lumberjacks > 0) {
+    lumberjacks--;
+    workers--;
+    freeWorkers++;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 
 function AddScouts() {
-  if (freeWorkers>0) {
+  if (freeWorkers > 0) {
     addScouts++;
     workers++;
     freeWorkers--;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 function DeductScouts() {
-  if (addScouts>0) {
-    addScouts-- ;
-    workers-- ;
-    freeWorkers++ ;
+  if (addScouts > 0) {
+    addScouts--;
+    workers--;
+    freeWorkers++;
+  } else {
   }
-  else {}
   refreshCounters();
 }
 
 /*End Of Turn*/
 
 function EndOfTurn() {
-  i++
+  i++;
   farmers += addFarmers;
   addFarmers = 0;
-  food += farmers * 2;
+  food += farmers * 3;
 
   lumberjacks += addLumberjacks;
   addLumberjacks = 0;
@@ -254,7 +270,7 @@ function EndOfTurn() {
   addMiners = 0;
   stone += miners * 1;
 
-  skils += addStudents/10;
+  skils += addStudents / 10;
   freeWorkers += addStudents;
   addStudents = 0;
 
@@ -264,31 +280,69 @@ function EndOfTurn() {
   nfreeHouse = 0;
 
   if (i < 5) {
-  pollution = pollution + 0.25;/*Increas for end of turn*/
-  pollution -= (addCleaners/2);
-  freeWorkers += addCleaners;
-  addCleaners = 0;
+    pollution += 0.25; /*Increas for end of turn*/
+    pollution -= addCleaners / 2;
+    freeWorkers += addCleaners;
+    addCleaners = 0;
+  } else {
+    pollution++; /*Increas for end of turn*/
+    pollution -= addCleaners * 0.2;
+    freeWorkers += addCleaners;
+    addCleaners = 0;
   }
-  else {
-    pollution++/*Increas for end of turn*/
-  pollution -= (addCleaners/5);
-  freeWorkers += addCleaners;
-  addCleaners = 0;
+  if (pollution.toString().length > 4) {
+    pollution = Math.round(pollution);
+  }
+  switch (true) {
+    case pollution >= 2 && pollution < 3:
+      document.getElementById("hPollution").src = "./Photo/Polution2.jpg";
+      break;
+    case pollution < 5 && pollution >= 3:
+      document.getElementById("hPollution").src = "./Photo/Polution3.jpg";
+      break;
+    case pollution <= 8 && pollution >= 5:
+      document.getElementById("hPollution").src = "./Photo/Polution4.jpg";
+      break;
+    case pollution > 8:
+      document.getElementById("hPollution").src = "./Photo/Polution5.jpg";
+      break;
+    default:
+      document.getElementById("hPollution").src = "./Photo/Polution1.jpg";
+  }
+  /*food consumption*/
+  food = food - people;
+  if (pollution < 0) {
+    pollution = 0;
   }
   /*city*/
-  
-    people += 2*addScouts;
-    freeWorkers += 2*addScouts;
-    food += 1*addScouts;
-    wood++;
-    stone++;
-    freeWorkers += addScouts;
-    addScouts = 0;
-  
-  
 
+  people += 2 * addScouts;
+  freeWorkers += 2 * addScouts;
+  food += 1 * addScouts;
+  wood++;
+  stone++;
+  freeWorkers += addScouts;
+  addScouts = 0;
 
-  refreshCounters()
+  if (house < people) {
+    let z = house - people;
+    freeWorkers += z;
+    people = house;
+    alert("You have lost people bulid more hauses");
+  }
+  if (food < 0) {
+    let z = people + food;
+    freeWorkers = z;
+    people += food;
+    food = 0;
+    alert("Your people are starving ! Bulid more Farmers !");
+  }
+  if (people < 1) {
+    freeWorkers = 0;
+    alert("You Lost, everybody are dead !!!");
+  }
+
+  refreshCounters();
 }
 
 
@@ -298,7 +352,7 @@ function refreshCounters() {
   counterViewWood.innerHTML = wood;
   counterViewStone.innerHTML = stone;
   counterViewSkils.innerHTML = skils;
-  counterPeople.innerHTML = people
+  counterPeople.innerHTML = people;
   counterViewPopulation.innerHTML = house;
   counterViewDefensive.innerHTML = defensive;
   counterViewPollution.innerHTML = pollution;
@@ -316,6 +370,9 @@ function refreshCounters() {
   lumberjacksAddedCounter.innerHTML = addLumberjacks;
   lumberjacksCounter.innerHTML = lumberjacks;
   scoutsAddedCounter.innerHTML = addScouts;
+  for (let a = 0; a < peopleToLearnCounter.length; a++) {
+    peopleToLearnCounter[a].innerHTML = freeWorkers;
+  }
 }
 
 /*EventListner*/

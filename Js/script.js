@@ -6,14 +6,15 @@ let lumberjacks = 0;
 let stone = 5;
 let miners = 0;
 let skils = 0;
-let people = 2; /*function random*/
-let house = 5;
+let people = 2; // 2
+let house = 5;  // 5
 let defensive = 0;
 let pollution = 1;
 let workers = 0;
-let freeWorkers = 2;
+let freeWorkers = 2; // 2
 let i = 0;
 let sliderValue = 0;
+let power;
 
 /*let for end of turn*/
 let nfreeHouse = 0;
@@ -67,7 +68,7 @@ const scoutsAddedCounter = document.getElementById("ScoutsAddedCounter");
 /*View Windows*/
 function ViewFarm() {
   viewFarm.classList.remove("d-none");
-
+  
 }
 
 function ViewHome() {
@@ -116,6 +117,17 @@ function AddHouse() {
   }
   refreshCounters();
 }
+function AddHouse10() {
+  if ((freeWorkers >= 10) & (wood >= 50) & (stone >= 20)) {
+    bulider+=10;
+    nfreeHouse += 50;
+    wood -= 50;
+    stone -= 20;
+    freeWorkers -= 10;
+  } else {
+  }
+  refreshCounters();
+}
 function DeductHouse() {
   if (nfreeHouse > 0) {
     bulider--;
@@ -123,6 +135,17 @@ function DeductHouse() {
     wood += 5;
     stone += 2;
     freeWorkers++;
+  } else {
+  }
+  refreshCounters();
+}
+function DeductHouse10() {
+  if (nfreeHouse >= 50) {
+    bulider -=10;
+    nfreeHouse -= 50;
+    wood += 50;
+    stone += 20;
+    freeWorkers +=10;
   } else {
   }
   refreshCounters();
@@ -150,6 +173,28 @@ function DeductFarmers() {
   }
   refreshCounters();
 }
+function AddFarmers10() {
+  if (freeWorkers >= 10) {
+    addFarmers+=10;
+    workers+=10;
+    freeWorkers-=10;
+  } else {
+  }
+  refreshCounters();
+}
+function DeductFarmers10() {
+  if (addFarmers >= 10) {
+    addFarmers-=10;
+    workers-=10;
+    freeWorkers+=10;
+  } else if (farmers > 10) {
+    farmers-=10;
+    workers-=10;
+    freeWorkers+=10;
+  } else {
+  }
+  refreshCounters();
+}
 
 function AddCleaners() {
   if (freeWorkers > 0) {
@@ -165,6 +210,24 @@ function DeductCleaners() {
     addCleaners--;
     workers--;
     freeWorkers++;
+  } else {
+  }
+  refreshCounters();
+}
+function AddCleaners10() {
+  if (freeWorkers >= 10) {
+    addCleaners+=10;
+    workers+=10;
+    freeWorkers-=10;
+  } else {
+  }
+  refreshCounters();
+}
+function DeductCleaners10() {
+  if (addCleaners >= 10) {
+    addCleaners-=10;
+    workers-=10;
+    freeWorkers+=10;
   } else {
   }
   refreshCounters();
@@ -192,6 +255,28 @@ function DeductMiners() {
   }
   refreshCounters();
 }
+function AddMiners10() {
+  if (freeWorkers >= 10) {
+    addMiners+=10;
+    workers+=10;
+    freeWorkers-=10;
+  } else {
+  }
+  refreshCounters();
+}
+function DeductMiners10() {
+  if (addMiners >= 10) {
+    addMiners-=10;
+    workers-=10;
+    freeWorkers+=10;
+  } else if (miners > 10) {
+    miners-=10;
+    workers-=10;
+    freeWorkers+=10;
+  } else {
+  }
+  refreshCounters();
+}
 
 function AddStudents() {
   if (freeWorkers > 0) {
@@ -207,6 +292,24 @@ function DeductStudents() {
     addStudents--;
     workers--;
     freeWorkers++;
+  } else {
+  }
+  refreshCounters();
+}
+function AddStudents10() {
+  if (freeWorkers >= 10) {
+    addStudents+=10;
+    workers+=10;
+    freeWorkers-=10;
+  } else {
+  }
+  refreshCounters();
+}
+function DeductStudents10() {
+  if (addStudents >= 10) {
+    addStudents-=10;
+    workers-=10;
+    freeWorkers+=10;
   } else {
   }
   refreshCounters();
@@ -234,6 +337,28 @@ function DeductLumberjacks() {
   }
   refreshCounters();
 }
+function AddLumberjacks10() {
+  if (freeWorkers >= 10) {
+    addLumberjacks+=10;
+    workers+=10;
+    freeWorkers-=10;
+  } else {
+  }
+  refreshCounters();
+}
+function DeductLumberjacks10() {
+  if (addLumberjacks >= 10) {
+    addLumberjacks-=10;
+    workers-=10;
+    freeWorkers+=10;
+  } else if (lumberjacks > 10) {
+    lumberjacks-=10;
+    workers-=10;
+    freeWorkers+=10;
+  } else {
+  }
+  refreshCounters();
+}
 
 function AddScouts() {
   if (freeWorkers > 0) {
@@ -249,6 +374,24 @@ function DeductScouts() {
     addScouts--;
     workers--;
     freeWorkers++;
+  } else {
+  }
+  refreshCounters();
+}
+function AddScouts10() {
+  if (freeWorkers >= 10) {
+    addScouts+=10;
+    workers+=10;
+    freeWorkers-=10;
+  } else {
+  }
+  refreshCounters();
+}
+function DeductScouts10() {
+  if (addScouts >= 10) {
+    addScouts-=10;
+    workers-=10;
+    freeWorkers+=10;
   } else {
   }
   refreshCounters();
@@ -346,7 +489,6 @@ function EndOfTurn() {
 }
 
 
-
 function refreshCounters() {
   counterViewFood.innerHTML = food;
   counterViewWood.innerHTML = wood;
@@ -383,3 +525,4 @@ document.getElementById("hGarage").addEventListener("click", ViewGarage);
 document.getElementById("hForest").addEventListener("click", ViewForest);
 document.getElementById("hMountains").addEventListener("click", ViewMountains);
 document.getElementById("hCity").addEventListener("click", ViewCity);
+document.addEventListener('keydown', (event) => { if (event.key === 'Escape') {  offAll() }});

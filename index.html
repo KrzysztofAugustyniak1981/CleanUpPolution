@@ -59,14 +59,19 @@
             <img class="img-fluid" src="./Photo/HomeBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1 w-75">
                     <p class="col-12"><br>Free workers : <span class="PeopleToLearnCounter">2</span></p>
                     <p class="col-12"><br>Free Bads <span id="FreeBadsCounter" >1</span>/<span id="HousesCounter">5</span></p>
-                    <button class="col-2 bg-white rounded" onclick="AddHouse()">+</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddHouse()">+</button>
                     <div class="col-8">
                         <p class="mt-2">Hause building: <span id="HauseBuildingCounter">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded" onclick="DeductHouse()">-</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductHouse()">-</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddHouse10()">++</button>
+                    <div class="col-8">
+                        <p class="mt-2">x 10</span></p>
+                    </div>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductHouse10()">- -</button>
                 </div>
             </div>
         </div>
@@ -75,15 +80,20 @@
             <img class="img-fluid" src="./Photo/FarmaBig.jpg">
             <div class="ViewWindow ">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1 w-75">
                     <p class="col-12"><br>Free workers : <span class="PeopleToLearnCounter">2</span></p>
                     <p class="col-12" id="Farmers"><br>Farmers <span id="FarmersCounter">0</span></p>
-                    <button class="col-2 bg-white rounded" onclick="AddFarmers()">+</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddFarmers()">+</button>
                     <div class="col-8">
                         <p class="mt-2">Farmers add: <span id="AddedFarmWorkers">0</span></p>
                     </div>
-                    <button class="col-2 bg-white rounded" onclick="DeductFarmers()">-</button>
-                </div>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductFarmers()">-</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddFarmers10()">++</button>
+                    <div class="col-8">
+                        <p class="mt-2">x 10</p>
+                    </div>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductFarmers10()">- -</button>
+                    </div>
             </div>
         </div>
 
@@ -91,7 +101,7 @@
             <img class="img-fluid" src="./Photo/PolutionBig.jpg">
             <div class="ViewWindow bg-dark text-warning">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end text-white">X</a>
-                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1 w-75">
                     <p class="col-12"><br>Free workers : <span class="PeopleToLearnCounter">2</span></p>
                     <p class="col-12"><br>Pollution lvl : <span id="PollutionLvlCounter">1</span></p>
                     <button class="col-2 bg-white rounded" onclick="AddCleaners()">+</button>
@@ -99,6 +109,11 @@
                         <p class="mt-2">Cleaners add: <span id="CleanersAddView">0</span></p>
                     </div>
                     <button class="col-2 bg-white rounded" onclick="DeductCleaners()">-</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddCleaners10()">++</button>
+                    <div class="col-8">
+                        <p class="mt-2">x 10</p>
+                    </div>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductCleaners10()">- -</button>
                 </div>
             </div>
         </div>
@@ -107,7 +122,7 @@
             <img class="img-fluid" src="./Photo/MountainsBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1 w-75">
                     <p class="col-12"><br>Free workers : <span class="PeopleToLearnCounter">2</span></p>
                     <p class="col-12"><br>Miners : <span id="MinersCounter">0</span></p>
                     <button class="col-2 bg-white rounded" onclick="AddMiners()">+</button>
@@ -115,6 +130,11 @@
                         <p class="mt-2">Miners add: <span id="MinersAddedCounter">0</span></p>
                     </div>
                     <button class="col-2 bg-white rounded" onclick="DeductMiners()">-</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddMiners10()">++</button>
+                    <div class="col-8">
+                        <p class="mt-2">x 10</p>
+                    </div>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductMiners10()">- -</button>
                 </div>
             </div>
         </div>
@@ -123,13 +143,18 @@
             <img class="img-fluid" src="./Photo/GarageBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1 w-75">
                     <p class="col-12"><br>Free workers : <span class="PeopleToLearnCounter">2</span></p>
                     <button class="col-2 bg-white rounded" onclick="AddStudents()">+</button>
                     <div class="col-8">
                         <p class="mt-2">People add: <span id="StudentsAddedCounter">0</span></p>
                     </div>
                     <button class="col-2 bg-white rounded" onclick="DeductStudents()">-</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddStudents10()">++</button>
+                    <div class="col-8">
+                        <p class="mt-2">x 10</p>
+                    </div>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductStudents10()">- -</button>
                 </div>
             </div>
         </div>
@@ -138,7 +163,7 @@
             <img class="img-fluid" src="./Photo/ForestBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1 w-75">
                     <p class="col-12"><br>Free workers : <span class="PeopleToLearnCounter">2</span></p>
                     <p class="col-12"><br>Lumberjacks <span id="LumberjacksCounter">0</span></p>
                     <button class="col-2 bg-white rounded" onclick="AddLumberjacks()">+</button>
@@ -146,6 +171,11 @@
                         <p class="mt-2">Lumberjacks add: <span id="LumberjacksAddedCounter">0</span></p>
                     </div>
                     <button class="col-2 bg-white rounded" onclick="DeductLumberjacks()">-</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddLumberjacks10()">++</button>
+                    <div class="col-8">
+                        <p class="mt-2">x 10</p>
+                    </div>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductLumberjacks10()">- -</button>
                 </div>
             </div>
         </div>
@@ -154,7 +184,7 @@
             <img class="img-fluid" src="./Photo/CityBig.jpg">
             <div class="ViewWindow">
                 <a href="#" onclick="offAll()" id="Off" class="Off text-end">X</a>
-                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1">
+                <div class="row text-center buttonChange border border-dark bg-secondary mx-0 g-0 p-1 w-75">
                     <p class="col-12"><br>Free workers : <span class="PeopleToLearnCounter">2</span></p>
                     <p class="col-12"><br>Scouts</p>
                     <button class="col-2 bg-white rounded" onclick="AddScouts()">+</button>
@@ -162,6 +192,11 @@
                         <p class="mt-2">People add: <span id="ScoutsAddedCounter">0</span></p>
                     </div>
                     <button class="col-2 bg-white rounded" onclick="DeductScouts()">-</button>
+                    <button class="col-2 bg-white rounded my-1" onclick="AddScouts10()">++</button>
+                    <div class="col-8">
+                        <p class="mt-2">x 10</p>
+                    </div>
+                    <button class="col-2 bg-white rounded my-1" onclick="DeductScouts10()">- -</button>
                 </div>
             </div>
         </div>

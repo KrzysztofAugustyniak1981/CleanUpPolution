@@ -7,7 +7,7 @@ let stone = 5;
 let miners = 0;
 let skils = 0;
 let people = 2; // 2
-let house = 5;  // 5
+let house = 5; // 5
 let defensive = 0;
 let pollution = 1;
 let workers = 0;
@@ -68,7 +68,6 @@ const scoutsAddedCounter = document.getElementById("ScoutsAddedCounter");
 /*View Windows*/
 function ViewFarm() {
   viewFarm.classList.remove("d-none");
-  
 }
 
 function ViewHome() {
@@ -119,7 +118,7 @@ function AddHouse() {
 }
 function AddHouse10() {
   if ((freeWorkers >= 10) & (wood >= 50) & (stone >= 20)) {
-    bulider+=10;
+    bulider += 10;
     nfreeHouse += 50;
     wood -= 50;
     stone -= 20;
@@ -141,11 +140,11 @@ function DeductHouse() {
 }
 function DeductHouse10() {
   if (nfreeHouse >= 50) {
-    bulider -=10;
+    bulider -= 10;
     nfreeHouse -= 50;
     wood += 50;
     stone += 20;
-    freeWorkers +=10;
+    freeWorkers += 10;
   } else {
   }
   refreshCounters();
@@ -175,22 +174,22 @@ function DeductFarmers() {
 }
 function AddFarmers10() {
   if (freeWorkers >= 10) {
-    addFarmers+=10;
-    workers+=10;
-    freeWorkers-=10;
+    addFarmers += 10;
+    workers += 10;
+    freeWorkers -= 10;
   } else {
   }
   refreshCounters();
 }
 function DeductFarmers10() {
   if (addFarmers >= 10) {
-    addFarmers-=10;
-    workers-=10;
-    freeWorkers+=10;
+    addFarmers -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else if (farmers > 10) {
-    farmers-=10;
-    workers-=10;
-    freeWorkers+=10;
+    farmers -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else {
   }
   refreshCounters();
@@ -216,18 +215,18 @@ function DeductCleaners() {
 }
 function AddCleaners10() {
   if (freeWorkers >= 10) {
-    addCleaners+=10;
-    workers+=10;
-    freeWorkers-=10;
+    addCleaners += 10;
+    workers += 10;
+    freeWorkers -= 10;
   } else {
   }
   refreshCounters();
 }
 function DeductCleaners10() {
   if (addCleaners >= 10) {
-    addCleaners-=10;
-    workers-=10;
-    freeWorkers+=10;
+    addCleaners -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else {
   }
   refreshCounters();
@@ -257,22 +256,22 @@ function DeductMiners() {
 }
 function AddMiners10() {
   if (freeWorkers >= 10) {
-    addMiners+=10;
-    workers+=10;
-    freeWorkers-=10;
+    addMiners += 10;
+    workers += 10;
+    freeWorkers -= 10;
   } else {
   }
   refreshCounters();
 }
 function DeductMiners10() {
   if (addMiners >= 10) {
-    addMiners-=10;
-    workers-=10;
-    freeWorkers+=10;
+    addMiners -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else if (miners > 10) {
-    miners-=10;
-    workers-=10;
-    freeWorkers+=10;
+    miners -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else {
   }
   refreshCounters();
@@ -298,18 +297,18 @@ function DeductStudents() {
 }
 function AddStudents10() {
   if (freeWorkers >= 10) {
-    addStudents+=10;
-    workers+=10;
-    freeWorkers-=10;
+    addStudents += 10;
+    workers += 10;
+    freeWorkers -= 10;
   } else {
   }
   refreshCounters();
 }
 function DeductStudents10() {
   if (addStudents >= 10) {
-    addStudents-=10;
-    workers-=10;
-    freeWorkers+=10;
+    addStudents -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else {
   }
   refreshCounters();
@@ -339,22 +338,22 @@ function DeductLumberjacks() {
 }
 function AddLumberjacks10() {
   if (freeWorkers >= 10) {
-    addLumberjacks+=10;
-    workers+=10;
-    freeWorkers-=10;
+    addLumberjacks += 10;
+    workers += 10;
+    freeWorkers -= 10;
   } else {
   }
   refreshCounters();
 }
 function DeductLumberjacks10() {
   if (addLumberjacks >= 10) {
-    addLumberjacks-=10;
-    workers-=10;
-    freeWorkers+=10;
+    addLumberjacks -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else if (lumberjacks > 10) {
-    lumberjacks-=10;
-    workers-=10;
-    freeWorkers+=10;
+    lumberjacks -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else {
   }
   refreshCounters();
@@ -380,22 +379,26 @@ function DeductScouts() {
 }
 function AddScouts10() {
   if (freeWorkers >= 10) {
-    addScouts+=10;
-    workers+=10;
-    freeWorkers-=10;
+    addScouts += 10;
+    workers += 10;
+    freeWorkers -= 10;
   } else {
   }
   refreshCounters();
 }
 function DeductScouts10() {
   if (addScouts >= 10) {
-    addScouts-=10;
-    workers-=10;
-    freeWorkers+=10;
+    addScouts -= 10;
+    workers -= 10;
+    freeWorkers += 10;
   } else {
   }
   refreshCounters();
 }
+
+/*Info function*/
+
+function foodMouseOver() {}
 
 /*End Of Turn*/
 
@@ -416,6 +419,9 @@ function EndOfTurn() {
   skils += addStudents / 10;
   freeWorkers += addStudents;
   addStudents = 0;
+  if (skils.toString().length >4) {
+    skils = Math.round(skils);
+  }
 
   freeWorkers += bulider;
   house += nfreeHouse;
@@ -484,20 +490,30 @@ function EndOfTurn() {
     freeWorkers = 0;
     alert("You Lost, everybody are dead !!!");
   }
-
+  defensive = freeWorkers*skils
   refreshCounters();
 }
 
-
+/* 2 ways of doing thisame*/
 function refreshCounters() {
   counterViewFood.innerHTML = food;
+  document.getElementById("FoodChange").innerHTML =
+    food + (farmers + addFarmers) * 3 - people + addScouts;
   counterViewWood.innerHTML = wood;
+  document.getElementById("WoodChange").innerHTML =
+    wood + (lumberjacks + addLumberjacks) * 2;
   counterViewStone.innerHTML = stone;
+  document.getElementById("StoneChange").innerHTML =
+    stone + (miners + addMiners);
   counterViewSkils.innerHTML = skils;
+  document.getElementById("SkilsChange").innerHTML = skils + addStudents / 10;
   counterPeople.innerHTML = people;
   counterViewPopulation.innerHTML = house;
   counterViewDefensive.innerHTML = defensive;
+  document.getElementById("DefensiveChange").innerHTML = freeWorkers*skils;
   counterViewPollution.innerHTML = pollution;
+  document.getElementById("PollutionChange").innerHTML =
+    pollution + 0.25 - addCleaners * 0.2;
   pollutionCounterSmall.innerHTML = pollution;
   houseBuildingCounter.innerHTML = nfreeHouse;
   freeHouseCounter.innerHTML = people;
@@ -525,4 +541,9 @@ document.getElementById("hGarage").addEventListener("click", ViewGarage);
 document.getElementById("hForest").addEventListener("click", ViewForest);
 document.getElementById("hMountains").addEventListener("click", ViewMountains);
 document.getElementById("hCity").addEventListener("click", ViewCity);
-document.addEventListener('keydown', (event) => { if (event.key === 'Escape') {  offAll() }});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    offAll();
+  }
+});
+/*EventListner text info*/

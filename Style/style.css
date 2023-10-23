@@ -1,158 +1,157 @@
 body {
-    height: 720px;
-    width: 1280px;
-    background-color: black;
-    margin: auto;
-    margin-top: 40px;
+  height: 720px;
+  width: 1280px;
+  background-color: black;
+  margin: auto;
+  margin-top: 40px;
 }
 .Main-info {
-    display: flex;
-    height: 60px;
-    width: 1280px;
-    justify-content: center;
-    align-items: center;
-    background-color: burlywood;
+  display: flex;
+  height: 60px;
+  width: 1280px;
+  justify-content: center;
+  align-items: center;
+  background-color: burlywood;
 }
 .Counter {
-    margin: auto;
-    font-size: large;
-    font-weight: 700;
-    color:teal;
+  margin: auto;
+  font-size: large;
+  font-weight: 700;
+  color: teal;
 }
 .Main-window {
-    width: 1280px;
-    height: 660px;
-    background-color: rgb(35,177,77);
-    columns: 3;
-    column-gap: 10px;
-    padding: 5px 12px;
+  width: 1280px;
+  height: 660px;
+  background-color: rgb(35, 177, 77);
+  columns: 3;
+  column-gap: 10px;
+  padding: 5px 12px;
 }
 
 .first-column {
-    width: 410px;
-    height: 650px;
-    padding: 3px;
-    text-align: center;
-    vertical-align: bottom;
+  width: 410px;
+  height: 650px;
+  padding: 3px;
+  text-align: center;
+  vertical-align: bottom;
 }
 .FC-one {
-    margin: auto;
-    margin-top: 3px;
-    
-    width: 405px;
-    height: 208px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    
+  margin: auto;
+  margin-top: 3px;
+
+  width: 405px;
+  height: 208px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .FC-two {
-    margin: auto;
-    margin-top: 6px;
-    width: 405px;
-    height: 208px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  margin: auto;
+  margin-top: 6px;
+  width: 405px;
+  height: 208px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .FC-three {
-    margin: auto;
-    margin-top: 6px;
-    width: 405px;
-    height: 211px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  margin: auto;
+  margin-top: 6px;
+  width: 405px;
+  height: 211px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .second-column {
-    width: 410px;
-    height: 650px;
-    padding: 3px;
+  width: 410px;
+  height: 650px;
+  padding: 3px;
 }
 .SC-one {
-    margin: auto;
-    margin-top: 3px;
-    width: 405px;
-    height: 208px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  margin: auto;
+  margin-top: 3px;
+  width: 405px;
+  height: 208px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .SC-two {
-    margin: auto;
-    margin-top: 6px;
-    width: 405px;
-    height: 208px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  margin: auto;
+  margin-top: 6px;
+  width: 405px;
+  height: 208px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .SC-three {
-    margin: auto;
-    margin-top: 6px;
-    width: 405px;
-    height: 211px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  margin: auto;
+  margin-top: 6px;
+  width: 405px;
+  height: 211px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .third-column {
-    width: 410px;
-    height: 650px;
-    padding: 3px;
+  width: 410px;
+  height: 650px;
+  padding: 3px;
 }
 .TC-one {
-    margin: auto;
-    margin-top: 3px;
-    width: 405px;
-    height: 208px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  margin: auto;
+  margin-top: 3px;
+  width: 405px;
+  height: 208px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .TC-two {
-    margin: auto;
-    margin-top: 6px;
-    width: 405px;
-    height: 208px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  margin: auto;
+  margin-top: 6px;
+  width: 405px;
+  height: 208px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .TC-three {
-    margin: auto;
-    margin-top: 6px;
-    width: 405px;
-    height: 211px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  margin: auto;
+  margin-top: 6px;
+  width: 405px;
+  height: 211px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 .WindowOpenHtml {
-    margin: 11vh 0px 0px 26vw;
-    max-width: 48vw;
+  margin: 11vh 0px 0px 26vw;
+  max-width: 48vw;
 }
 .Off {
-    position: absolute;
-    margin: -4vh 0px 0px 42vw;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
+  position: absolute;
+  margin: -4vh 0px 0px 42vw;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 .buttonChange {
-    padding: 3px 0px;
-    vertical-align: bottom;
+  padding: 3px 0px;
+  vertical-align: bottom;
 }
 .ViewWindow {
-    position: absolute;
-    margin: -54vh 0px 0px 4vw;
-    font-size: large;
-    line-height: 50%;
+  position: absolute;
+  margin: -54vh 0px 0px 4vw;
+  font-size: large;
+  line-height: 50%;
 }
 button {
-    background: none;
-    border: none;
-    
+  background: none;
+  border: none;
 }
+
